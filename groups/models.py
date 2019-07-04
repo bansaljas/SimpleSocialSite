@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
-
+from django.urls import render
 # Create your models here.
 import misaka
 
@@ -21,6 +21,9 @@ class Group(models.Model):
         self.slug=slugify(self.name)
         self.description_html=misaka.html(self.description)
         super().save(*args,**kwargs)
+
+    def get_absolute_url(self):
+        pass
 
     class Meta:
         ordering=['name']
