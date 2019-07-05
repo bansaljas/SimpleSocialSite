@@ -24,10 +24,10 @@
             <h1>{{grp.name}}</h1>
             <p>{{grp.description_html|safe}}</p>
             <div class="col-md-4">
-              <h6>{{group.members.count}} member{{group.members.count|pluralize}}</h6>
+              <h6>{{grp.members.count}} member{{grp.members.count|pluralize}}</h6>
             </div>
             <div class="col-md-4">
-              <h6>{{group.posts.count}} post{{group.members.count|pluralize}}</h6>
+              <h6>{{grp.posts.count}} post{{grp.members.count|pluralize}}</h6>
             </div>
           </a>
         {% empty %}
