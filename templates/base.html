@@ -25,7 +25,7 @@
                 <a class="nav-item nav-link btn btn-simple" href="{% url 'groups:new' %}">Create Group</a>
                 <a class="nav-item nav-link btn btn-simple" href="{% url 'accounts:logout' %}">Logout</a>
               {% else %}
-                <a class="nav-item nav-link btn btn-simple" href="#">Groups</a>
+                <a class="nav-item nav-link btn btn-simple" href="{% url 'groups:all' %}">Groups</a>
                 <a class="nav-item nav-link btn btn-simple" href="{% url 'accounts:login' %}">Login</a>
                 <a class="nav-item nav-link btn btn-simple" href="{% url 'accounts:signup' %}">Sign Up</a>
               {% endif %}
