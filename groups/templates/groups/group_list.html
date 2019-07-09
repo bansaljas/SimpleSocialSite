@@ -1,4 +1,4 @@
-{% extends 'groups/group_list.html' %}
+{% extends 'groups/group_base.html' %}
   {% block pregroup %}
     <div class="col-md-4">
       {% if user.is_authenticated %}
@@ -17,8 +17,8 @@
   {% endblock %}
 
   {% block groupcontent %}
-    <div class="container">
-      <div class="col-md-8">
+    <div class="col-md-8">
+      <div class="container">
         {% for grp in group_list %}
           <a href="{% url 'groups:detail' %}">
             <h1>{{grp.name}}</h1>
