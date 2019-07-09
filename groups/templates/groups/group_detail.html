@@ -20,7 +20,7 @@
         <h1>No Posts yet!</h1>
       {% else %}
         {% for post in group.posts.all %}
-          {% include 'post/_post.html' %}
+          {% include 'posts/_post.html' %}
         {% endfor %}
       {% endif %}
      </div>

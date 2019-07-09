@@ -1,0 +1,16 @@
+{% extends "posts/post_base.html" %}
+
+{% block pre_body %}
+<div class="col-md-4">
+	<h1>@{{ post_user.username }}</h1>
+	<h4>Post History:</h4>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="col-md-8">
+	{% for post in post_list %}
+		{% include "posts/_post.html" %}
+	{% endfor %}
+</div>
+{% endblock %}
