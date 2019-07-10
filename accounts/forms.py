@@ -11,4 +11,4 @@ class SignUpForm(UserCreationForm):
         self.fields['username'].label="Display Name"
         self.fields['email'].label="Email address"
         self.fields['password1'].label="Password"
-        self.fields['password2'].label="Confirm Password"  
+        # self.fields['password2'].label="Confirm Password"  
