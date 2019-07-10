@@ -11,6 +11,6 @@
       <form method="post">
         {% csrf_token %}
         <input type="submit" class="btn btn-lg btn-danger" value=" Confirm Delete">
-        <a href="{% url 'posts:detail' pk=post.pk %}" class="btn btn-lg btn-warning">Cancel</a>
+        <a href="{% url 'posts:detail' username=user.username pk=post.pk %}" class="btn btn-lg btn-warning">Cancel</a>
       </form>
   {% endblock %}

@@ -20,8 +20,8 @@
     <div class="col-md-8">
       <div class="container">
         {% for grp in group_list %}
-          <a href="{% url 'groups:detail' %}">
-            <h1>{{grp.name}}</h1>
+          <a href="{% url 'groups:detail' slug=grp.slug %}">
+            <h1>{{grp.name}}</h1> </a>
             <p>{{grp.description_html|safe}}</p>
             <div class="col-md-4">
               <h6>{{grp.members.count}} member{{grp.members.count|pluralize}}</h6>
@@ -29,7 +29,7 @@
             <div class="col-md-4">
               <h6>{{grp.posts.count}} post{{grp.members.count|pluralize}}</h6>
             </div>
-          </a>
+
         {% empty %}
           <h1>No Groups created yet.</h1>
         {% endfor %}

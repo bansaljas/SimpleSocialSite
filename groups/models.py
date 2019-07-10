@@ -18,7 +18,7 @@ class Group(models.Model):
     members = models.ManyToManyField(User,through="GroupMembers")
 
     def __str__(self):
-        self.name
+        return self.name
 
     def save(self,*args,**kwargs):
         self.slug=slugify(self.name)

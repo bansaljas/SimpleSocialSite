@@ -8,7 +8,8 @@
     {% endif %}
   </h5>
 
-  {% if user.is_authenticated and post.user==user and not hide_delete %}
+  {% if user.is_authenticated and post.user == user and not hide_delete %}
     <a href="{% url 'posts:delete' pk=post.pk %}" class='btn btn-lg btn-danger'>Delete Post</a>
+  {% endif %}  
   <hr>
 </div>
