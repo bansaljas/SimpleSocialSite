@@ -1,18 +1,21 @@
 {% extends 'groups/group_base.html' %}
   {% block pregroup %}
     <div class="col-md-4">
+      <br>
       {% if user.is_authenticated %}
           <h2>Welcome back
               <a href="{% url 'posts:for_user' username=user.username %}">@{{user.username}}</a>
           </h2>
       {% endif %}
-      <h4>Welcome to Group List</h4>
-      <h6>Select a Group with a shared interest!</h6>
-
-      {% if user.is_authenticated %}
-          <a href="{% url 'groups:new' %}" class='btn btn-lg btn-warning'>Create New Group</a>
-      {% endif %}
-
+      <hr>
+      <div class="container">
+        <h4>Welcome to Group List</h4>
+        <h6>Select a Group with a shared interest!</h6>
+        <br>
+        {% if user.is_authenticated %}
+            <a href="{% url 'groups:new' %}" class='btn btn-lg btn-warning'>Create New Group</a>
+        {% endif %}
+      </div>
     </div>
   {% endblock %}
 
@@ -24,12 +27,9 @@
             <h1>{{grp.name}}</h1> </a>
             <p>{{grp.description_html|safe}}</p>
             <div class="col-md-4">
-              <h6>{{grp.members.count}} member{{grp.members.count|pluralize}}</h6>
+              <h6>Member{{grp.members.count|pluralize}}: {{grp.members.count}}
+                  <br>Post{{grp.members.count|pluralize}}: {{grp.posts.count}} </h6>
             </div>
-            <div class="col-md-4">
-              <h6>{{grp.posts.count}} post{{grp.members.count|pluralize}}</h6>
-            </div>
-
         {% empty %}
           <h1>No Groups created yet.</h1>
         {% endfor %}
