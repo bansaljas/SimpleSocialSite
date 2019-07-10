@@ -1,17 +1,18 @@
 {% extends 'groups/group_base.html' %}
 
   {% block pregroup %}
-    <div class="container">
-      <h1>{{group.name}}</h1>
-      <h4>Members: {{group.members.count}}</h4>
+    <!-- <div class="container"> -->
+      <div class="col-md-4">
+        <h1>{{group.name}}</h1>
+        <h4>Members: {{group.members.count}}</h4>
 
-      {% if user in group.members.all %}
-        <a href="{% url 'groups:leave' slug=group.slug %}" class='btn btn-lg btn-danger'>Leave</a>
-      {% else %}
-        <a href="{% url 'groups:join' slug=group.slug %}" class='btn btn-lg btn-warning'>Join</a>
-      {% endif %}
-
-    </div>
+        {% if user in group.members.all %}
+          <a href="{% url 'groups:leave' slug=group.slug %}" class='btn btn-lg btn-danger'>Leave</a>
+        {% else %}
+          <a href="{% url 'groups:join' slug=group.slug %}" class='btn btn-lg btn-warning'>Join</a>
+        {% endif %}
+      </div>
+    <!-- </div> -->
    {% endblock %}
 
    {% block groupcontent %}

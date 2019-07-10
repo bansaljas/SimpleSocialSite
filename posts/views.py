@@ -20,6 +20,7 @@ class PostList(SelectRelatedMixin,generic.ListView):
     def get_context_data(self,**kwargs):
         context = super().get_context_data(**kwargs)
         context['other_groups'] = Group.objects.exclude(members__in=[self.request.user])
+        context['member_groups'] = Group.objects.filter(members__in=[self.request.user])
         return context
 
 class UserPosts(generic.ListView):

@@ -4,9 +4,9 @@
       {% if request.user.is_authenticated %}
         <h2>Your Groups:</h2>
         <ul>
-          {% for member_group in get_user_groups %}
+          {% for member_group in member_groups %}
             <li>
-              <a href="{% url 'groups:detail' slug=member_group.group.slug %}">{{member_group.group.name}}</a>
+              <a href="{% url 'groups:detail' slug=member_group.slug %}">{{member_group.name}}</a>
             </li>
           {% empty %}
               <h4>Not a member of any group!</h4>

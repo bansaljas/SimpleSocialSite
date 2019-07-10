@@ -1,7 +1,11 @@
 from django.contrib import admin
 from .models import Group,GroupMembers
 # Register your models here.
-admin.site.register(Group)
 
 class GroupMembersInline(admin.TabularInline):
-    model=GroupMembers
+    model = GroupMembers
+
+class GroupAdmin(admin.ModelAdmin):
+    inlines = [GroupMembersInline]
+
+admin.site.register(Group,GroupAdmin)
