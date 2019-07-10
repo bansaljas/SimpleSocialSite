@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -11,10 +12,10 @@
      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
      crossorigin="anonymous"></script>
 
+     <link rel="stylesheet" href="{% static 'simplesocial/master.css' %}">
   </head>
   <body>
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
           <div class="container">
 
             <a class="navbar-brand" href="{% url 'index' %}">Star Social</a>
@@ -39,5 +40,7 @@
         {% endblock %}
       </div>
 
+      <canvas id="canvas"></canvas>
+      <script type="text/javascript" src="{% static 'simplesocial/style.js' %}"></script>
   </body>
 </html>
