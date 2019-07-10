@@ -1,4 +1,11 @@
 {% extends 'posts/post_base.html' %}
+  {% block pre_body %}
+    <div class="col-md-2">
+    </div>
+  {% endblock %}
+
   {% block body %}
-    {% include 'posts/_post.html' %}
-  {% endblock %}  
+    <div class="col-md-8">
+      {% include 'posts/_post.html' %}
+    </div>
+  {% endblock %}

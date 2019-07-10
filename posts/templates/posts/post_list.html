@@ -1,24 +1,25 @@
 {% extends 'posts/post_base.html' %}
   {% block pre_body %}
     <div class="col-md-4">
+      <br>
       {% if request.user.is_authenticated %}
-        <h2>Your Groups:</h2>
+        <h3>Your Groups:</h3>
         <ul>
           {% for member_group in member_groups %}
             <li>
-              <a href="{% url 'groups:detail' slug=member_group.slug %}">{{member_group.name}}</a>
+              <h5><a href="{% url 'groups:detail' slug=member_group.slug %}">{{member_group.name}}</a></h5>
             </li>
           {% empty %}
-              <h4>Not a member of any group!</h4>
+              <h5>Not a member of any group!</h5>
           {% endfor %}
         </ul>
       {% endif %}
-
-      <h2>Other Groups:</h2>
+      <hr>
+      <h3>Other Groups:</h3>
       <ul>
         {% for othergroup in other_groups %}
           <li>
-            <a href="{% url 'groups:detail' slug=othergroup.slug %}">{{othergroup.name}}</a>
+            <h5><a href="{% url 'groups:detail' slug=othergroup.slug %}">{{othergroup.name}}</a></h5>
           </li>
        {% empty %}
           <h5>No other group.</h5>

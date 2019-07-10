@@ -1,17 +1,17 @@
 <!-- <div class="col-md-8"> -->
 <br>
   <div class="main_content">
-    <h5>
+    <h3>
       <a href="{% url 'posts:for_user' username=post.user.username %}">@{{post.user.username}}</a>
       {{post.message_html|safe}}
+    </h3>
       <div class="container">
-        <time><a href="{% url 'posts:detail' username=post.user.username pk=post.pk %}">{{post.created_at}}</a></time>
-        <br>
+        <h6><time><a href="{% url 'posts:detail' username=post.user.username pk=post.pk %}">{{post.created_at}}</a></time>
+          <br>
         {% if post.group %}
-          <a href="{% url 'groups:detail' slug=post.group.slug %}">In {{post.group.name}}</a>
+          <a href="{% url 'groups:detail' slug=post.group.slug %}">In {{post.group.name}}</a></h6>
         {% endif %}
       </div>
-    </h5>
 
     {% if user.is_authenticated and post.user == user and not hide_delete %}
       <a href="{% url 'posts:delete' pk=post.pk %}" class='btn btn-danger'>Delete Post</a>
