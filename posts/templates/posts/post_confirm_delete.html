@@ -14,6 +14,7 @@
           {% csrf_token %}
           <button type="submit" class="btn btn-lg btn-danger">
               <i class="fa fa-trash" aria-hidden="true"></i> Confirm</button>
+              
           <a href="{% url 'posts:detail' username=user.username pk=post.pk %}" class="btn btn-lg btn-warning">
               <i class="fa fa-reply" aria-hidden="true"></i> Cancel</a>
         </form>

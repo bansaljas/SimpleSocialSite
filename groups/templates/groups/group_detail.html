@@ -13,9 +13,19 @@
 
           <a href="{% url 'groups:leave' slug=group.slug %}" class='btn btn-danger'>
             <i class="fa fa-times" aria-hidden="true"></i> Leave</a>
+            <br>
+            <br>
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
         {% else %}
           <a href="{% url 'groups:join' slug=group.slug %}" class='btn btn-warning'>
             <i class="fa fa-user-plus" aria-hidden="true"></i> Join</a>
+            <br>
+            <br>
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
         {% endif %}
       </div>
     <!-- </div> -->
