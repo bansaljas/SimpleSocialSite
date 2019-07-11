@@ -5,7 +5,7 @@
       <div class="col-md-4">
         <h1>{{group.name}}</h1>
         <hr>
-        <h4>Members: {{group.members.count}}</h4>
+        <h4>Member{{group.members.count|pluralize}}: {{group.members.count}}</h4>
 
         {% if user in group.members.all %}
           <a href="{% url 'posts:new' %}" class='btn btn-primary'>Create New Post</a>
@@ -19,6 +19,7 @@
 
    {% block groupcontent %}
      <div class="col-md-8">
+       <div class="scrollstyle">
        {% if group.posts.count == 0 %}
         <h1>No Posts yet!</h1>
       {% else %}
@@ -26,5 +27,6 @@
           {% include 'posts/_post.html' %}
         {% endfor %}
       {% endif %}
+      </div>
      </div>
    {% endblock %}

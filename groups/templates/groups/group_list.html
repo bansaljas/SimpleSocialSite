@@ -22,19 +22,21 @@
   {% block groupcontent %}
     <div class="col-md-8">
       <div class="container">
-        <br>
-        {% for grp in group_list %}
-          <a href="{% url 'groups:detail' slug=grp.slug %}">
-            <h1>{{grp.name}}</h1> </a>
-            <p>{{grp.description_html|safe}}</p>
-            <div class="col-md-4">
-              <h6>Member{{grp.members.count|pluralize}}: {{grp.members.count}}
-                  <br>Post{{grp.members.count|pluralize}}: {{grp.posts.count}} </h6>
-            </div>
-            <hr>
-        {% empty %}
-          <h1>No Groups created yet.</h1>
-        {% endfor %}
+        <div class="scrollstyle">
+          <br>
+          {% for grp in group_list %}
+            <a href="{% url 'groups:detail' slug=grp.slug %}">
+              <h1>{{grp.name}}</h1> </a>
+              <p>{{grp.description_html|safe}}</p>
+              <div class="col-md-4">
+                <h6>Member{{grp.members.count|pluralize}}: {{grp.members.count}}
+                    <br>Post{{grp.posts.count|pluralize}}: {{grp.posts.count}} </h6>
+              </div>
+              <hr>
+          {% empty %}
+            <h1>No Groups created yet.</h1>
+          {% endfor %}
+        </div>
       </div>
     </div>
   {% endblock %}

@@ -5,8 +5,14 @@ html,
 body{
   height: 100%;
   width: 100%;
+  margin:0;
   overflow: hidden;
-  margin: 0;
+}
+
+.scrollstyle{
+  overflow-y:auto;
+  max-height: 600px;
+  overflow-x:auto;
 }
 
 body{
