@@ -8,10 +8,14 @@
         <h4>Member{{group.members.count|pluralize}}: {{group.members.count}}</h4>
 
         {% if user in group.members.all %}
-          <a href="{% url 'posts:new' %}" class='btn btn-primary'>Create New Post</a>
-          <a href="{% url 'groups:leave' slug=group.slug %}" class='btn btn-danger'>Leave</a>
+          <a href="{% url 'posts:new' %}" class='btn btn-primary'>
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Create New Post</a>
+
+          <a href="{% url 'groups:leave' slug=group.slug %}" class='btn btn-danger'>
+            <i class="fa fa-times" aria-hidden="true"></i> Leave</a>
         {% else %}
-          <a href="{% url 'groups:join' slug=group.slug %}" class='btn btn-warning'>Join</a>
+          <a href="{% url 'groups:join' slug=group.slug %}" class='btn btn-warning'>
+            <i class="fa fa-user-plus" aria-hidden="true"></i> Join</a>
         {% endif %}
       </div>
     <!-- </div> -->
@@ -20,6 +24,7 @@
    {% block groupcontent %}
      <div class="col-md-8">
        <div class="scrollstyle">
+         <br>
        {% if group.posts.count == 0 %}
         <h1>No Posts yet!</h1>
       {% else %}

@@ -6,16 +6,19 @@
       {{post.message_html|safe}}
     </h3>
       <div class="container">
-        <h6><time><a href="{% url 'posts:detail' username=post.user.username pk=post.pk %}">{{post.created_at}}</a></time>
+        <h6>
+          <time><a href="{% url 'posts:detail' username=post.user.username pk=post.pk %}">{{post.created_at}}</a></time>
           <br>
-        {% if post.group %}
-          <a href="{% url 'groups:detail' slug=post.group.slug %}">In {{post.group.name}}</a></h6>
-        {% endif %}
-      </div>
+          {% if post.group %}
+            <a href="{% url 'groups:detail' slug=post.group.slug %}">In {{post.group.name}}</a>
+          {% endif %}
 
-    {% if user.is_authenticated and post.user == user and not hide_delete %}
-      <a href="{% url 'posts:delete' pk=post.pk %}" class='btn btn-danger'>Delete Post</a>
-    {% endif %}
+          {% if user.is_authenticated and post.user == user and not hide_delete %}
+            <a href="{% url 'posts:delete' pk=post.pk %}" class='btn btn-danger delbtn'>
+            <i class="fa fa-trash" aria-hidden="true"></i></a>
+          {% endif %}
+        </h6>
+    </div>
     <hr>
   </div>
 <!-- </div> -->

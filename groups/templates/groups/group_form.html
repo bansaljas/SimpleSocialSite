@@ -13,7 +13,8 @@
        <form method="post">
          {% csrf_token %}
          {% bootstrap_form form %}
-         <input type="submit" class="btn btn-lg btn-primary" value="Create">
+         <button type="submit" class="btn btn-primary btn-lg">
+           <i class="fa fa-check" aria-hidden="true"></i> Create</button>
        </form>
      </div>
   {% endblock %}

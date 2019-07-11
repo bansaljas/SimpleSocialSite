@@ -28,3 +28,7 @@ hr{
 h1{
   font-family: 'Acme', sans-serif;
 }
+
+.delbtn{
+  margin-left: 600px;
+}

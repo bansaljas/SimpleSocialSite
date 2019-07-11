@@ -13,7 +13,8 @@
         <h6>Select a Group with a shared interest!</h6>
         <br>
         {% if user.is_authenticated %}
-            <a href="{% url 'groups:new' %}" class='btn btn-lg btn-warning'>Create New Group</a>
+            <a href="{% url 'groups:new' %}" class='btn btn-lg btn-warning'>
+              <i class="fa fa-plus" aria-hidden="true"></i> Create New Group</a>
         {% endif %}
       </div>
     </div>
